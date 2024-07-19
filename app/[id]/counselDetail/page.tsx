@@ -8,16 +8,17 @@ export default function counselDetailPage({ params }) {
   const [isMobile, setIsMobile] = useState(false);
   const [counselInfo, setCounselInfo] = useState({});
 
-  useEffect(() => {
-    counselService
-      .getCounselDetail(params.id)
-      .then((response) => {
-        setCounselInfo(response);
-      })
-      .catch((error) => {
-        console.error('Error fetching mock data:', error);
-      });
+  const setCounselDetail = async () => {
+    try {
+      const data = await counselService.getCounselDetail(params.id);
+      setCounselInfo(data);
+    } catch (e) {
+      console.error('getCounselDetail error', e);
+    }
+  };
 
+  useEffect(() => {
+    setCounselDetail();
     const handleResize = () => {
       setIsMobile(window.innerWidth < 401);
     };

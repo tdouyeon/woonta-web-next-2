@@ -7,17 +7,19 @@ import Box from '@/components/Box';
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
-  const [counselList, setCounselList] = useState([]);
+  const [counselInfoList, setCounselInfoList] = useState([]);
+
+  const setCounsel = async () => {
+    try {
+      const data = await counselService.getCounselList();
+      setCounselInfoList(data);
+    } catch (e) {
+      console.error('getCounsel error', e);
+    }
+  };
 
   useEffect(() => {
-    counselService
-      .getCounselList()
-      .then((response) => {
-        setCounselList(response);
-      })
-      .catch((error) => {
-        console.error('Error fetching mock data:', error);
-      });
+    setCounsel();
 
     const handleResize = () => {
       setIsMobile(window.innerWidth < 401);
@@ -38,8 +40,8 @@ export default function Home() {
         </div>
         <div className="flex-grow flex justify-center bg-baseBG min-h-[90vh]">
           <div className="p-4">
-            {counselList.length > 0 &&
-              counselList.map((counsel, index) => (
+            {counselInfoList.length > 0 &&
+              counselInfoList.map((counsel, index) => (
                 <Box key={index} counsel={counsel} />
               ))}
           </div>
