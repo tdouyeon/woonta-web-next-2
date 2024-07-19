@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 
 const PageHeader = ({ name }: { name: string }) => {
-  const [isMobile, setIsMobile] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -21,18 +20,8 @@ const PageHeader = ({ name }: { name: string }) => {
     };
   }, []);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 401);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   return (
-    <header className={`${isMobile ? 'w-full' : 'min-w-[420px]'} fixed top-0`}>
+    <header className="w-[100vw] 420px:w-420 fixed top-0">
       <nav className="w-full text-white flex justify-between items-center p-4">
         <svg
           onClick={() => window.history.back()}
@@ -50,9 +39,9 @@ const PageHeader = ({ name }: { name: string }) => {
         </svg>
       </nav>
       <div
-        className={`fixed top-0 transform transition-transform duration-300 ${
+        className={`fixed top-0 transform transition-transform duration-300 w-[100vw] 420px:w-420${
           isVisible ? 'translate-y-0' : '-translate-y-full'
-        } ${isMobile ? 'w-full' : 'min-w-[420px]'}`}
+        } `}
       >
         <nav className="w-full bg-gray-900 text-white flex justify-between items-center p-4">
           <svg
@@ -69,7 +58,7 @@ const PageHeader = ({ name }: { name: string }) => {
               transform="rotate(90 10 10)"
             />
           </svg>
-          <div>{name}</div>
+          {isVisible && <div>{name}</div>}
           <div></div>
         </nav>
       </div>

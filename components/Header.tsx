@@ -1,27 +1,12 @@
-'use client';
-import { useEffect, useState } from 'react';
 import Dropbox from './Dropbox';
 
 const Header = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 401);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   return (
     <header
-      className={`${
-        isMobile ? `w-[100vw]` : 'w-[420px]'
-      } bg-gray-800 top-0 text-white shadow-md p-4 fixed`}
+      className="
+        w-[100vw] 420px:w-420 bg-gray-800 top-0 text-white shadow-md fixed"
     >
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center p-4">
         <nav>
           <Dropbox />
         </nav>

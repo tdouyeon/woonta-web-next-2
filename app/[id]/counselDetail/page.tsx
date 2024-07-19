@@ -5,7 +5,6 @@ import PageHeader from '@/components/PageHeader';
 import Image from 'next/image';
 
 export default function counselDetailPage({ params }) {
-  const [isMobile, setIsMobile] = useState(false);
   const [counselInfo, setCounselInfo] = useState({});
 
   const setCounselDetail = async () => {
@@ -19,28 +18,15 @@ export default function counselDetailPage({ params }) {
 
   useEffect(() => {
     setCounselDetail();
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 401);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
-    <main
-      className={!isMobile ? `flex-grow  h-screen flex justify-center` : ''}
-    >
-      <div className={`bg-baseBG ${!isMobile ? `w-[420px]` : ''}`}>
+    <main className="flex-grow h-screen flex justify-center">
+      <div className="bg-baseBG w-[100vw] 420px:w-420">
         <PageHeader name={`${counselInfo?.name} 선생님`} />
 
-        <div
-          className={`flex bg-baseBG min-h-[95vh] flex-col ${
-            isMobile ? 'w-screen' : 'w-[420px]'
-          }`}
-        >
-          <div className="bg-gray-900 font-semibold w-[100%] h-[350px] py-2 px-4"></div>
+        <div className="flex bg-baseBG min-h-[95vh] flex-col">
+          <div className="bg-gray-900 font-semibold h-[350px] py-2 px-4" />
           <div className=" pl-6 pt-4 bg-white py-7">
             <div className="text-primary text-2xl font-semibold">
               {counselInfo?.name} 선생님

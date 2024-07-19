@@ -6,7 +6,6 @@ import counselService from '@/service/counsel.service';
 import Box from '@/components/Box';
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(false);
   const [counselInfoList, setCounselInfoList] = useState([]);
 
   const setCounsel = async () => {
@@ -20,22 +19,12 @@ export default function Home() {
 
   useEffect(() => {
     setCounsel();
-
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 401);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     <main className={`flex-grow h-screen flex justify-center `}>
-      <div className={`bg-baseBG ${isMobile ? `w-[100vw]` : 'w-[420px]'}`}>
-        <div
-          className={`pt-12 bg-baseBG ${isMobile ? `w-[100vw]` : 'w-[420px]'}`}
-        >
+      <div className="w-[100vw] 420px:w-420">
+        <div className="pt-12 bg-baseBG">
           <Header />
         </div>
         <div className="flex-grow flex justify-center bg-baseBG min-h-[90vh]">
