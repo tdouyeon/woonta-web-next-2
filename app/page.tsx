@@ -1,5 +1,5 @@
 'use client';
-import Footer from '@/components/Footer';
+import BottomTab from '@/components/BottomTab';
 import Header from '@/components/Header';
 import { useEffect, useState } from 'react';
 import counselService from '@/service/counsel.service';
@@ -36,7 +36,7 @@ export default function Home() {
           </div>
         </div>
         <div className="pt-12 bg-baseBG">
-          <Footer />
+          <BottomTab />
         </div>
       </div>
     </main>

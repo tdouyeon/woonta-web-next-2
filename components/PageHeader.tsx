@@ -39,11 +39,11 @@ const PageHeader = ({ name }: { name: string }) => {
         </svg>
       </nav>
       <div
-        className={`fixed top-0 transform transition-transform duration-300 w-[100vw] 420px:w-420${
-          isVisible ? 'translate-y-0' : '-translate-y-full'
+        className={`w-[100vw] 420px:w-420  fixed top-0 transform transition-transform duration-300 w-[100vw] 420px:w-420${
+          isVisible ? 'translate-y-0 bg-gray-900' : '-translate-y-full'
         } `}
       >
-        <nav className="w-full bg-gray-900 text-white flex justify-between items-center p-4">
+        <nav className="text-white flex justify-between items-center p-4">
           <svg
             onClick={() => window.history.back()}
             className="w-6 h-6 cursor-pointer"

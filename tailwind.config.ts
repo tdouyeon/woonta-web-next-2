@@ -20,7 +20,7 @@ const config: Config = {
         baseBG: '#f1f1f1',
         primary: '#111111',
         secondary: '#f6993f',
-        button: '#212122',
+        button: '#a374db',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -47,6 +47,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };
 export default config;
