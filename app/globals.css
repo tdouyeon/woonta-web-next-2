@@ -26,6 +26,24 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+textarea {
+  @apply w-[90%] h-9 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700 placeholder-gray-400 mx-0.5 py-1 text-center;
+}
+
+select {
+  @apply block w-full h-12 px-4 py-2 border border-gray-300 rounded-md shadow-sm bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url('/images/down-arrow.png') no-repeat right 10px center;
+  background-size: 10px;
+  padding-right: 40px;
+}
+
+.bottom-button {
+  @apply px-4 py-4 text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 my-6 mx-6;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

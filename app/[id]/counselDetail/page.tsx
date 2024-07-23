@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import counselService from '@/service/counsel.service';
-import PageHeader from '@/components/PageHeader';
+import ScrollHeader from '@/components/ScrollHeader';
 import Image from 'next/image';
 import LinkArrowBox from '@/components/LinkArrowBox';
 
@@ -46,7 +46,7 @@ export default function counselDetailPage({ params }) {
   return (
     <main className="flex-grow h-screen flex justify-center">
       <div className="bg-baseBG w-[100vw] 420px:w-420">
-        <PageHeader name={`${counselInfo?.name} 선생님`} />
+        <ScrollHeader name={`${counselInfo?.name} 선생님`} />
 
         <div className="flex bg-baseBG min-h-[95vh] flex-col">
           <div className="font-semibold w-[100vw] 420px:w-420 h-[350px]">
