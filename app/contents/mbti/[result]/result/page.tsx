@@ -7,11 +7,11 @@ export default function ResultPage({ params }: any) {
     <div className={`flex-grow h-screen flex justify-center `}>
       <div className="w-[100vw] 420px:w-420 bg-white flex justify-between flex-col">
         <PageHeader name={'MBTI 결과'} />
-        <div className="mx-6 my-[35vw]">
-          <div className="text-primary text-center text-xl font-semibold mt-[20vw]">
+        <div className="flex-1 mx-6 mt-[35vh]">
+          <div className="text-primary text-center text-xl font-semibold">
             사주를 바탕으로 예상되는 MBTI 결과는
           </div>
-          <div className="text-primary text-center text-2xl font-bold mt-[2vw]">
+          <div className="text-primary text-center text-2xl font-bold mt-[1vh]">
             {params.result}
           </div>
           <div className="text-primary text-center text-primary font-samibold my-2">

@@ -31,10 +31,10 @@ export default function MBTIPage() {
       onSubmit={handleSubmit}
       className={`flex-grow h-screen flex justify-center `}
     >
-      <div className="w-[100vw] 420px:w-420 bg-white flex justify-between flex-col">
+      <div className="w-[100vw] 420px:w-420 bg-white flex justify-between flex-col overflow-hidden">
         <PageHeader name={'MBTI 맞추기'} />
-        <div className="mx-6 my-[35vw]">
-          <div className="text-primary text-center text-2xl font-bold mt-[20vw]">
+        <div className="flex-1 mx-6 mt-[35vh]">
+          <div className="text-primary text-center text-2xl font-bold">
             생년월일시분을 알려주세요
           </div>
           <div className="text-primary text-center text-primary font-samibold my-2">
