@@ -5,7 +5,7 @@ import ScrollHeader from '@/components/ScrollHeader';
 import Image from 'next/image';
 import LinkArrowBox from '@/components/LinkArrowBox';
 
-export default function counselDetailPage({ params }) {
+export default function counselDetailPage({ params }: any) {
   const [counselInfo, setCounselInfo] = useState({});
 
   const setCounselDetail = async () => {

@@ -2,7 +2,7 @@
 import PageHeader from '@/components/PageHeader';
 import Link from 'next/link';
 
-export default function ResultPage({ params }) {
+export default function ResultPage({ params }: any) {
   return (
     <div className={`flex-grow h-screen flex justify-center `}>
       <div className="w-[100vw] 420px:w-420 bg-white flex justify-between flex-col">
