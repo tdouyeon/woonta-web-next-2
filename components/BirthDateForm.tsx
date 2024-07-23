@@ -1,11 +1,20 @@
 'use client';
 import { useRef, FormEvent, SetStateAction, Dispatch } from 'react';
+
+interface formData {
+  yyyy: string;
+  MM: string;
+  dd: string;
+  hh: string;
+  mm: string;
+}
+
 export default function BirthDateForm({
   formData,
   setFormData,
 }: {
-  formData: {};
-  setFormData: Dispatch<SetStateAction<{}>>;
+  formData: formData;
+  setFormData: Dispatch<SetStateAction<formData>>;
 }) {
   const yyyyInputRef = useRef(null);
   const MMInputRef = useRef(null);

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-const Box = ({ counsel }) => {
+const Box = ({ counsel }: any) => {
   return (
     <ul className="divide-y divide-gray-200 rounded-lg overflow-hidden shadow-md flex justify-content bg-white mt-3">
       <li className="py-6 px-4 py-2 sm:px-6 flex items-center justify-around w-80 my-2">

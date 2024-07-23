@@ -21,12 +21,12 @@ api.interceptors.request.use(async (request) => {
   return request;
 });
 
-const responserHandler = (response) => {
+const responserHandler = (response: any) => {
   // console.log('in response interceptor', response);
   return response;
 };
 
-const errorHandler = (error) => {
+const errorHandler = (error: any) => {
   console.log('in error handle', error);
   if (error.response) {
     console.log(error.response.data);

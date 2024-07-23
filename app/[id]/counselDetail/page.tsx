@@ -1,27 +1,49 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, SetStateAction } from 'react';
 import counselService from '@/service/counsel.service';
 import ScrollHeader from '@/components/ScrollHeader';
 import Image from 'next/image';
 import LinkArrowBox from '@/components/LinkArrowBox';
 
+interface Info {
+  reviews: string[];
+  name: number;
+  region: string;
+  price: number;
+  introduce: string;
+  reviewDetail: string;
+}
+
+interface Review {
+  nickname: string;
+  createdAt: string;
+  reviewTitle: string;
+  reviewDetail: string;
+}
+
 export default function counselDetailPage({ params }: any) {
-  const [counselInfo, setCounselInfo] = useState({});
+  const [counselInfo, setCounselInfo] = useState<Info>();
 
   const setCounselDetail = async () => {
     try {
-      const data = await counselService.getCounselDetail(params.id);
-      setCounselInfo(data);
+      const data: unknown = await counselService.getCounselDetail(params.id);
+      setCounselInfo(data as Info);
     } catch (e) {
       console.error('getCounselDetail error', e);
     }
   };
 
   const reviewCompo = () => {
-    const preReviews = [counselInfo?.reviews[0], counselInfo?.reviews[1]];
+    const preReviews: (Review | undefined)[] = [
+      counselInfo?.reviews[0],
+      counselInfo?.reviews[1],
+    ] as (Review | undefined)[];
+
+    const reviews = preReviews as Review[];
+
     return (
       <div className="flex flex-col justify-between overflow-hidden">
-        {preReviews.map((review) => (
+        {reviews.map((review) => (
           <div className="flex-1 divide-gray-300 rounded-lg overflow-hidden shadow-md bg-white p-4 m-1 text-ellipsis max-h-[250px]">
             <div className="flex flex-row justify-between">
               <div className="text-primary ">{review.nickname}</div>

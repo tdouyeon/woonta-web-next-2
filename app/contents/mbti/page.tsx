@@ -16,7 +16,7 @@ export default function MBTIPage() {
     mm: '',
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await contentsService.getMbtiTestResult(formData);

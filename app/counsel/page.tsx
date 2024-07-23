@@ -1,7 +1,7 @@
 'use client';
 import BottomTab from '@/components/BottomTab';
 import Header from '@/components/Header';
-import { useEffect, useState } from 'react';
+import { SetStateAction, useEffect, useState } from 'react';
 import counselService from '@/service/counsel.service';
 import Box from '@/components/Box';
 
@@ -11,7 +11,8 @@ export default function Home() {
   const setCounsel = async () => {
     try {
       const data = await counselService.getCounselList();
-      setCounselInfoList(data);
+      const result = data as SetStateAction<never[]>;
+      setCounselInfoList(result);
     } catch (e) {
       console.error('getCounsel error', e);
     }
