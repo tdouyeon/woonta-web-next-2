@@ -11,7 +11,7 @@ export default function ResultPage({ params }: any) {
           <div className="text-primary text-center text-xl font-semibold">
             사주를 바탕으로 예상되는 MBTI 결과는
           </div>
-          <div className="text-primary text-center text-2xl font-bold mt-[1vh]">
+          <div className="text-main text-center text-2xl font-bold mt-[1vh]">
             {params.result}
           </div>
           <div className="text-primary text-center text-primary font-samibold my-2">

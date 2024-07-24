@@ -27,7 +27,14 @@ body {
 }
 
 textarea {
-  @apply w-[90%] h-9 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700 placeholder-gray-400 mx-0.5 py-1 text-center;
+  @apply w-[90%] h-11 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700 placeholder-gray-400 mx-0.5 py-1 text-center;
+  line-height: 2.5rem;
+  padding: 0;
+}
+
+textarea:focus {
+  border-color: #a374db;
+  outline: none;
 }
 
 select {
@@ -40,8 +47,30 @@ select {
   padding-right: 40px;
 }
 
+select:focus {
+  border-color: #a374db;
+  outline: none;
+}
+
+option:checked {
+  background-color: #a374db;
+  color: #fff;
+}
+
 .bottom-button {
-  @apply px-4 py-4 text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 my-6 mx-6;
+  @apply px-4 py-4 text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 mb-6 mx-6;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
 }
 
 @layer utilities {

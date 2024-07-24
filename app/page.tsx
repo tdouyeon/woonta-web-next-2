@@ -26,23 +26,14 @@ export default function Home() {
   return (
     <main className={`flex-grow h-screen flex justify-center `}>
       <div className="w-[100vw] 420px:w-420">
-        <div className="flex-grow flex flex-col justify-center items-center bg-baseBG min-h-[90vh]">
-          <Link
-            href="/contents/mbti"
-            className="flex items-center justify-center px-5 py-2 text-sm w-[150px] text-white bg-blue-500 hover:bg-blue-600 rounded-md font-semibold bg-button mb-2"
-          >
+        <div className="flex-grow flex flex-col justify-center items-center bg-baseBG min-h-[90vh] text-center">
+          <Link href="/contents/mbti" className="bottom-button w-[200px]">
             MBTI맞추기
           </Link>
-          <Link
-            href="/contents/mbti"
-            className="flex items-center justify-center px-5 py-2 text-sm w-[150px] text-white bg-blue-500 hover:bg-blue-600 rounded-md font-semibold bg-button mb-2"
-          >
+          <Link href="/contents/love" className="bottom-button w-[200px]">
             결혼/연애운
           </Link>
-          <Link
-            href="/contents/mbti"
-            className="flex items-center justify-center px-5 py-2 text-sm w-[150px] text-white bg-blue-500 hover:bg-blue-600 rounded-md font-semibold bg-button mb-2"
-          >
+          <Link href="/contents/gunghap" className="bottom-button w-[200px]">
             궁합 점수
           </Link>
         </div>

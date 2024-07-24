@@ -12,7 +12,7 @@ const Box = ({ counsel }: any) => {
           <span className="text-gray-800 text-sm">{counsel.region}</span>
           <span className="text-gray-800 font-bold">{counsel.price}</span>
         </div>
-        <button className="ml-4 px-5 py-2 text-sm text-white bg-blue-500 hover:bg-blue-600 rounded-md font-semibold bg-button">
+        <button className="ml-4 px-5 py-2 text-sm text-white bg-blue-500 hover:bg-blue-600 rounded-md font-semibold bg-main">
           <Link href={`${counsel.id}/counselDetail`}>선택</Link>
         </button>
       </li>

@@ -20,7 +20,7 @@ const config: Config = {
         baseBG: '#f1f1f1',
         primary: '#111111',
         secondary: '#f6993f',
-        button: '#a374db',
+        main: '#a374db',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

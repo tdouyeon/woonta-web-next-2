@@ -35,11 +35,11 @@ export default function MBTIPage() {
         <PageHeader name={'MBTI 맞추기'} />
         <div className="flex-1 mx-6 mt-[35vh]">
           <div className="text-primary text-center text-2xl font-bold">
-            생년월일시분을 알려주세요
+            MBTI 테스트 👀
           </div>
-          <div className="text-primary text-center text-primary font-samibold my-2">
+          <div className="text-primary text-center text-primary font-samibold mt-2 mb-5">
             입력 정보를 기반으로 <br />
-            사주를 통해 MBTI를 예측해볼게요!
+            사주를 통해 MBTI를 예측해 볼게요!
           </div>
           <BirthDateForm formData={formData} setFormData={setFormData} />
         </div>
